@@ -7,6 +7,8 @@ import { Content, User, UserSocialPlatform } from '@/app/types';
 // const
 import { HOST, socialLogoMap } from '@/app/consts';
 import { Button } from '@/app/components/Button/Button';
+// mocks
+import apiData from '@/app/mocks/pageData.json';
 
 type HomeProps = {
   user: User
@@ -17,13 +19,19 @@ type HomeProps = {
 
 
 async function getData(): Promise<{ data: HomeProps }>{
-  const res = await fetch(`${HOST}/api/home`, { next: { revalidate: 3600 } })
+  try {
+    const res = await fetch(`${HOST}/api/home`, { next: { revalidate: 3600 } })
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+    if (!res.ok) {
+      throw new Error('Failed to fetch data')
+    }
+
+    return res.json()
+  } catch  {
+    return {
+      data: apiData as HomeProps
+    };
   }
-
-  return res.json()
 }
 
 export default async function Home() {
