@@ -1,0 +1,17 @@
+.hoobe-button {
+    font-family: 'Poppins', sans-serif;
+    border-radius: 14px;
+    background: var(--hoobe-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.hoobe-button:hover {
+    scale: 1.05;
+    transition: scale ease-in-out 0.1s;
+}

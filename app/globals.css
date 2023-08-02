@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #f3f3f3;
+  --hoobe-primary: #78c4cb;
+  --profile-name-color: black;
+  --white: #fff;
+  --black: #000;
+  --light-gray: #cacaca;
+}
+
+body {
+  background: var(--background-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+.hoobe-logo {
+  background: var(--hoobe-primary);
+  border-radius: 50%;
+  overflow: hidden;
+  width: 104px;
+  height: 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hoobe-logo svg {
+  scale: 0.75;
+}
+
+.card {
+  background: var(--white);
+  padding: 16px 72px 72px;
+  border-radius: 40px;
+}
+
+.home-card {
+  margin-top: 50px;
+  max-width: 664px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+    .card {
+      padding: 10px;
+    }
+
+    body {
+      background: var(--white)
+    }
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  color: var(--profile-name-color);
+}
+
+.social-platform {
+  border-radius: 50%;
+  background: var(--black);
+  padding: 5px;
+  margin: 5px;
+}
+
+.social-platform:hover {
+  scale: 1.1;
+  transition: all ease-in-out 0.1s;
+}
+
+.social-platform svg path {
+  fill: var(--white);
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 0;
+  width: 100%;
+  justify-items: center;
+}
+
+
+.hoobe-icon {
+  background: var(--white);
+  border-radius: 50%;
+  position: relative;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hoobe-icon svg {
+  scale: 0.17;
+  position: absolute;
+}
+
+.hoobe-icon svg path {
+  fill: var(--hoobe-primary);
+}
+
+.login-link {
+  color: var(--light-gray);
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fadeIn {
+  animation: fadeIn;
+}
+
+
+
+
